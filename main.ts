@@ -17,62 +17,43 @@ import { Course } from "./types/Course";
 import { CourseType } from "./types/CourseType";
 
 
-console.log("Додаємо професорів...");
-addProfessor({ id: 1, name: "Dr. John Doe", department: "Computer Science" });
-addProfessor({ id: 2, name: "Dr. Jane Smith", department: "Mathematics" });
+
+import { professors } from "./data/professors";
+import { classrooms } from "./data/classrooms";
+import { courses } from "./data/courses";
+import { schedule } from "./data/schedule";
 
 
-console.log("Додаємо заняття...");
-addLesson({
-    courseId: 1,
-    professorId: 1,
-    classroomNumber: "101",
-    dayOfWeek: "Monday",
-    timeSlot: "8:30-10:00",
-});
-
-addLesson({
-    courseId: 2,
-    professorId: 2,
-    classroomNumber: "102",
-    dayOfWeek: "Monday",
-    timeSlot: "8:30-10:00",
-});
+console.log("Додаємо професора...");
+addProfessor({ id: 6, name: "Dr. Sarah White", department: "History" });
+console.log(professors);
 
 
-console.log("Пошук вільних аудиторій...");
+console.log("\nДодаємо заняття...");
+const newLesson = { courseId: 1, professorId: 1, classroomNumber: "101", dayOfWeek: "Tuesday" as DayOfWeek, timeSlot: "8:30-10:00" as TimeSlot };
+if (addLesson(newLesson)) {
+    console.log("Заняття додано до розкладу:", newLesson);
+} else {
+    console.log("Заняття не додано через конфлікт.");
+}
+
+
+console.log("\nПошук вільних аудиторій на понеділок 8:30-10:00:");
 const availableClassrooms = findAvailableClassrooms("8:30-10:00", "Monday");
-console.log("Вільні аудиторії на понеділок 8:30-10:00:", availableClassrooms);
+console.log("Вільні аудиторії:", availableClassrooms);
 
 
-console.log("Розклад Dr. John Doe:");
+console.log("\nРозклад Dr. John Doe:");
 const professorSchedule = getProfessorSchedule(1);
 console.log(professorSchedule);
 
 
-console.log("Валідація заняття для конфліктів...");
-const newLesson: Lesson = {
-    courseId: 1,
-    professorId: 1,
-    classroomNumber: "101",
-    dayOfWeek: "Monday" as DayOfWeek, 
-    timeSlot: "8:30-10:00" as TimeSlot, 
-};
-
-const conflict = validateLesson(newLesson);
-if (conflict) {
-    console.log("Конфлікт:", conflict);
-} else {
-    console.log("Немає конфліктів");
-}
-
-
-console.log("Скасування заняття...");
+console.log("\nСкасовуємо заняття...");
 cancelLesson(1);
 console.log("Оновлений розклад Dr. John Doe після скасування заняття:", getProfessorSchedule(1));
 
 
-console.log("Зміна аудиторії для заняття...");
+console.log("\nЗміна аудиторії для заняття...");
 const reassigned = reassignClassroom(2, "105");
 if (reassigned) {
     console.log("Оновлений розклад Dr. John Doe після зміни аудиторії:", getProfessorSchedule(1));
@@ -81,11 +62,15 @@ if (reassigned) {
 }
 
 
-console.log("Перевірка найпопулярнішого типу заняття...");
+console.log("\nНайпопулярніший тип занять:");
 const mostPopularCourseType = getMostPopularCourseType();
 console.log("Найпопулярніший тип занять:", mostPopularCourseType);
 
 
-console.log("Аналіз використання аудиторії...");
-const utilization = getClassroomUtilization("101");
-console.log("Використання аудиторії 101:", utilization, "%");
+console.log("\nПеревірка конфліктів...");
+const conflict = validateLesson(newLesson);
+if (conflict) {
+    console.log("Конфлікт:", conflict);
+} else {
+    console.log("Конфліктів не знайдено.");
+}

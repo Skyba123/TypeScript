@@ -1,11 +1,13 @@
-import { Lesson } from "../types/Lesson";
 import { schedule } from "../data/schedule";
 import { validateLesson } from "./validateLesson";
+import { Lesson } from "../types/Lesson";
 
 export function addLesson(lesson: Lesson): boolean {
-    if (validateLesson(lesson) === null) {
-        schedule.push(lesson);
-        return true;
+    const conflict = validateLesson(lesson);
+    if (conflict) {
+        console.log("Конфлікт при додаванні заняття:", conflict);
+        return false;
     }
-    return false;
+    schedule.push(lesson);
+    return true;
 }
