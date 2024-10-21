@@ -5,14 +5,13 @@ export function reassignClassroom(lessonId: number, newClassroomNumber: string):
     const lessonIndex = schedule.findIndex(lesson => lesson.courseId === lessonId);
     
     if (lessonIndex !== -1) {
-        // Створюємо нове заняття з новою аудиторією
+        
         const updatedLesson = { ...schedule[lessonIndex], classroomNumber: newClassroomNumber };
 
-        // Перевіряємо на конфлікти
+       
         const conflict = validateLesson(updatedLesson);
 
         if (conflict === null) {
-            // Якщо конфліктів немає, оновлюємо заняття
             schedule[lessonIndex] = updatedLesson;
             console.log(`Аудиторію для заняття з courseId ${lessonId} успішно змінено.`);
             return true;
