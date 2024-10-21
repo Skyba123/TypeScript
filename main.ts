@@ -101,21 +101,29 @@ async function main() {
                 console.log("Розклад викладача:", professorSchedule);
                 break;
                 
-            case "4":
-                const lessonId = Number(await askQuestion("Введіть ID курсу для зміни аудиторії: "));
-                const newClassroom = await askQuestion("Введіть нову аудиторію: ");
+                case "4":
+                    const lessonId = Number(await askQuestion("Введіть ID курсу для зміни аудиторії: "));
+                    const newClassroom = await askQuestion("Введіть нову аудиторію: ");
                 
+                    if (newClassroom !== null && newClassroom.trim() !== "") {
+                        const timeSlot = await askQuestion("Введіть час (8:30-10:00, 10:15-11:45, тощо): ") as TimeSlot;
+                        const dayOfWeek = await askQuestion("Введіть день тижня (Monday-Friday): ") as DayOfWeek;
                 
-                if (newClassroom !== null && newClassroom.trim() !== "") {
-                    if (reassignClassroom(lessonId, newClassroom)) {
-                        console.log("Аудиторію успішно змінено.");
+                        const availableClassrooms = findAvailableClassrooms(timeSlot, dayOfWeek);
+                        
+                        if (availableClassrooms.includes(newClassroom)) {
+                            if (reassignClassroom(lessonId, newClassroom)) {
+                                console.log("Аудиторію успішно змінено.");
+                            } else {
+                                console.log("Не вдалося змінити аудиторію.");
+                            }
+                        } else {
+                            console.log(`Аудиторія ${newClassroom} не доступна для зміни.`);
+                        }
                     } else {
-                        console.log("Не вдалося змінити аудиторію.");
+                        console.log("Введення нової аудиторії скасовано.");
                     }
-                } else {
-                    console.log("Введення нової аудиторії скасовано.");
-                }
-                break;
+                    break;
                 
             case "5":
                 const popularType = getMostPopularCourseType();
