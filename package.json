@@ -20,8 +20,7 @@
       "git add"
     ]
   },
-  "scripts": {
-    "husky-install": "husky install",
-    "prepare": "husky"
-  }
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+}
 }
