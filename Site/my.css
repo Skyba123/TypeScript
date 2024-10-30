@@ -189,9 +189,7 @@ h3 {
     opacity: 0;
     transition: opacity 1s;
   }
-  .fa a:hover{
-    background: #red;
-  }
+
   .icons {
     position: absolute;
     fill: #fff;
@@ -265,4 +263,34 @@ h3 {
 }
 .text_contact{
   color:white;
+}
+
+.post {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post h4 {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.post p {
+  font-size: 1em;
+  color: #555;
+}
+.animated-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  font-size: 24px; 
+  font-weight: bold; 
+}
+
+.animated-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

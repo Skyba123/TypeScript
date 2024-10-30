@@ -1,0 +1,9 @@
+{
+"compilerOptions": {
+  "target": "es6", // або інший рівень ECMAScript
+  "module": "commonjs",
+  "strict": true,
+  "outDir": "./dist", // Вихідна директорія для файлів JavaScript
+  "esModuleInterop": true
+},
+}
