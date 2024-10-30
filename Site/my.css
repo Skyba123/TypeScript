@@ -1,0 +1,268 @@
+body{
+  background-color: #FFF7FF ;
+  margin:0;
+  padding:0;
+ 
+}
+/* */
+.gradient{
+  background:linear-gradient(180deg,#A987FF, transparent);
+}
+/* */
+.text{
+  color:rgb(255, 255, 255);
+  font-size:1.5vw;
+}
+li, a, button {
+  font-family:Verdana,  Tahoma, sans-serif;
+  font-weight:50vw;
+  font-size:1vw;
+  text-decoration: none;
+
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  padding:30px 10%;
+
+}
+.logo {
+  cursor:pointer;
+  width:15vw;
+  
+}
+.menu {
+  list-style:none;
+}
+.menu li {
+  display:inline-block;
+  padding: 0px 20px;
+}
+.menu li a{
+  color:#4CAF50;
+}
+.menu li a:hover{
+  transition: all 0.3s ease 0 s;
+}
+button {
+  padding: 9px 25px;
+  background-color: #342840;
+  border:none;
+  border-radius: 50px;
+  cursor:pointer;
+  transition:all 0.3s ease 0 s;
+}
+button:hover{
+  background-color: #342840a8;
+}
+.contact{
+  color:white;
+}
+  
+
+
+.welcome {
+font-size: 1.3vw;
+text-align: center;
+background-color:#A987FF;
+margin: 2vw 10vw 2vw 10vw ;
+justify-content: center;
+border-radius: 10px;
+padding: 1px;
+}
+h3 {
+    color:#ffffff;
+    font-size: 30px;
+    
+}
+.spec {
+    text-align: center;
+}
+
+/*video*/
+
+
+
+/* Картинки */
+  .container {
+    height: 100vh;
+    width: 0vw;
+    max-height: 300px;
+    max-width: 1280px;
+    min-height: 500px;
+    min-width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .border {
+    height: 369px;
+    width: 290px;
+    background: transparent;
+    border-radius: 10px;
+    transition: border 1s;
+    position: relative;
+  }
+  .border:hover {
+    border: 1px solid #fff;
+  }
+  a {
+   text-decoration: none;
+   color: white;
+   font-size: 25px;
+  }
+  #ins:hover {
+    color: #dd4b39;
+  }
+  #twi:hover {
+    color: #55acee;
+  }
+  #fac:hover {
+    color: #3b5999;
+  }
+  .card {
+    height: 379px;
+    width: 300px;
+    background: #808080;
+    border-radius: 10px;
+    transition: background 0.8s;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 70px 63px -60px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .card0 {
+    background: url("https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg") center center no-repeat;
+    background-size: 300px;
+  }
+  .card0:hover {
+    background: url("https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg") left center no-repeat;
+    background-size: 600px;
+  }
+  .card0:hover h2 {
+    opacity: 1;
+  }
+  .card0:hover .fa {
+    opacity: 1;
+  }
+  .card1 {
+    background: url("https://i.pinimg.com/originals/28/d2/e6/28d2e684e7859a0dd17fbd0cea00f8a9.jpg") center center no-repeat;
+    background-size: 300px;
+  }
+  .card1:hover {
+    background: url("https://i.pinimg.com/originals/28/d2/e6/28d2e684e7859a0dd17fbd0cea00f8a9.jpg") left center no-repeat;
+    background-size: 600px;
+  }
+  .card1:hover h2 {
+    opacity: 1;
+  }
+  .card1:hover .fa {
+    opacity: 1;
+  }
+  .card2 {
+    background: url("https://i.pinimg.com/originals/ee/85/08/ee850842e68cfcf6e3943c048f45c6d1.jpg") center center no-repeat;
+    background-size: 300px;
+  }
+  .card2:hover {
+    background: url("https://i.pinimg.com/originals/ee/85/08/ee850842e68cfcf6e3943c048f45c6d1.jpg") left center no-repeat;
+    background-size: 600px;
+  }
+  .card2:hover h2 {
+    opacity: 1;
+  }
+  .card2:hover .fa {
+    opacity: 1;
+  }
+  .border h2 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #fff;
+    margin: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  .fa {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  .fa a:hover{
+    background: #red;
+  }
+  .icons {
+    position: absolute;
+    fill: #fff;
+    color: #fff;
+    height: 130px;
+    top: 226px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  * {
+    box-sizing: border-box;
+}
+
+/* Create three columns of equal width */
+.columns {
+    float: left;
+    width: 33.3%;
+    padding: 8px;
+}
+
+/* Style the list */
+.price {
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+/* Add shadows on hover */
+.price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+/* Pricing header */
+.price .header {
+    background-color: #584685;
+    color: white;
+    font-size: 25px;
+}
+
+/* List items */
+.price li {
+    border-bottom: 1px solid #BB8EE6;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Grey list item */
+.price .grey {
+    background-color: #d6c8fd;
+    font-size: 20px;
+}
+
+/* The "Sign Up" button */
+.button {
+    background-color: #2A2240;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+.info{
+  background-color: white;
+}
+.text_contact{
+  color:white;
+}
